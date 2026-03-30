@@ -149,8 +149,10 @@ main {
 }
 
 .search-card {
-  background: rgba(255, 255, 255, 0.93);
-  border: 1px solid #ddd5c5;
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(221, 213, 197, 0.7);
   border-top: 3px solid var(--herb-light);
   border-radius: 16px;
   padding: 1.6rem 1.4rem;
