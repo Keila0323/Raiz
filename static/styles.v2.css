@@ -1,0 +1,351 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@300;400;600;700&display=swap');
+
+:root {
+  --wood:        #4a3728;
+  --wood-mid:    #6b4e38;
+  --herb-green:  #4a6741;
+  --herb-light:  #7a9e6e;
+  --herb-pale:   #c8dcc2;
+  --gold:        #c8a830;
+  --gold-light:  #e8c84a;
+  --cream:       #faf6ee;
+  --beige:       #f5f0e8;
+  --beige-dark:  #ede4d5;
+  --text:        #2e2118;
+  --text-mid:    #5a3e2b;
+  --safe:        #4a6741;
+  --medium:      #c8a830;
+  --high:        #c0392b;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: var(--beige);
+  color: var(--text);
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* ── Leaf decorations ── */
+.leaf-right {
+  position: fixed;
+  top: -40px;
+  right: -80px;
+  width: 380px;
+  height: 520px;
+  background: url('/static/img/leaf-right.jpg') center/cover no-repeat;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.5;
+  border-radius: 0 0 0 60%;
+  -webkit-mask-image: linear-gradient(to left, rgba(0,0,0,0.85) 30%, transparent 100%);
+  mask-image: linear-gradient(to left, rgba(0,0,0,0.85) 30%, transparent 100%);
+}
+
+.leaf-bottom-left {
+  position: fixed;
+  bottom: -30px;
+  left: -60px;
+  width: 340px;
+  height: 220px;
+  background: url('/static/img/leaf-bottom.jpg') center/cover no-repeat;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.4;
+  border-radius: 0 40% 0 0;
+  -webkit-mask-image: linear-gradient(to top, rgba(0,0,0,0.8) 20%, transparent 100%);
+  mask-image: linear-gradient(to top, rgba(0,0,0,0.8) 20%, transparent 100%);
+}
+
+.leaf-bottom-right {
+  position: fixed;
+  bottom: -30px;
+  right: -40px;
+  width: 280px;
+  height: 180px;
+  background: url('/static/img/leaf-right.jpg') bottom center/cover no-repeat;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.32;
+  border-radius: 30% 0 0 0;
+  -webkit-mask-image: linear-gradient(to top, rgba(0,0,0,0.7) 10%, transparent 100%);
+  mask-image: linear-gradient(to top, rgba(0,0,0,0.7) 10%, transparent 100%);
+}
+
+/* ── Hero ── */
+.hero {
+  text-align: center;
+  padding: 4rem 1rem 2.5rem;
+  background: linear-gradient(180deg, #f0ebe0 0%, var(--beige) 100%);
+  border-bottom: 2px solid var(--beige-dark);
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.2rem;
+}
+
+.hero h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(4rem, 10vw, 6.5rem);
+  font-weight: 700;
+  color: var(--herb-green);
+  letter-spacing: 0.02em;
+  line-height: 1;
+  margin-bottom: 0.2rem;
+}
+
+.tagline {
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: var(--wood-mid);
+  letter-spacing: 0.02em;
+  margin-top: 0.4rem;
+}
+
+.subtitle {
+  max-width: 640px;
+  line-height: 1.75;
+  color: var(--text-mid);
+  font-size: 0.96rem;
+  margin-top: 0.2rem;
+}
+
+/* Gold accent — sits at bottom of hero bar */
+.hero-accent {
+  display: inline-block;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--gold);
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  margin-top: 1.4rem;
+  padding: 0.5rem 1.5rem;
+  border-top: 1px solid var(--beige-dark);
+  width: 100%;
+  text-align: center;
+}
+
+/* ── Layout ── */
+main {
+  max-width: 1060px;
+  margin: 0 auto;
+  padding: 2.5rem 1.5rem 8rem;
+  position: relative;
+  z-index: 1;
+}
+
+/* ── Search Cards ── */
+.search-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.search-card {
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(221, 213, 197, 0.7);
+  border-top: 3px solid var(--herb-light);
+  border-radius: 16px;
+  padding: 1.6rem 1.4rem;
+  box-shadow: 0 4px 20px rgba(74, 55, 40, 0.08);
+  display: flex;
+  flex-direction: column;
+  align-items: center;   /* CENTER everything horizontally */
+  text-align: center;
+  gap: 0.75rem;
+}
+
+.search-card h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--wood);
+}
+
+.search-card p {
+  font-size: 0.88rem;
+  color: var(--text-mid);
+  line-height: 1.55;
+  max-width: 280px;
+}
+
+/* ── Full-width card button ── */
+.full-btn {
+  width: 100% !important;
+  display: block !important;
+  text-align: center;
+  border-radius: 50px;
+  margin-top: 0.2rem;
+}
+
+/* ── Inputs ── */
+input, textarea {
+  width: 100%;
+  border: 1.5px solid #c8bfaa;
+  border-radius: 8px;
+  padding: 0.7rem 0.9rem;
+  font: inherit;
+  font-size: 0.9rem;
+  background: #faf7f2;
+  color: var(--text);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  text-align: left;
+}
+
+input:focus, textarea:focus {
+  outline: none;
+  border-color: var(--herb-light);
+  box-shadow: 0 0 0 3px rgba(122, 158, 110, 0.18);
+}
+
+/* ── Buttons — pill style, centered ── */
+button {
+  border: none;
+  border-radius: 50px;
+  padding: 0.65rem 1.8rem;
+  background: var(--herb-green);
+  color: var(--cream);
+  font-family: 'Inter', sans-serif;
+  font-size: 0.88rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
+  box-shadow: 0 3px 10px rgba(74, 103, 65, 0.25);
+  white-space: nowrap;
+  display: inline-block;
+}
+
+button:hover {
+  background: var(--wood);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 14px rgba(74, 55, 40, 0.3);
+}
+
+button:active { transform: translateY(0); }
+
+/* inline input+button row (kept for other uses) */
+.inline-controls {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  width: 100%;
+}
+.inline-controls input { flex: 1; }
+
+/* ── Status ── */
+.status {
+  min-height: 1.5rem;
+  margin: 1rem 0;
+  font-weight: 600;
+  color: var(--herb-green);
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+/* ── Result Cards ── */
+.results {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
+
+.result-card {
+  background: rgba(255, 255, 255, 0.93);
+  border-radius: 12px;
+  padding: 1.1rem;
+  border-left: 5px solid var(--safe);
+  box-shadow: 0 4px 16px rgba(74, 55, 40, 0.07);
+  transition: transform 0.2s ease;
+}
+
+.result-card:hover { transform: translateY(-3px); }
+.result-card.medium { border-left-color: var(--medium); }
+.result-card.high   { border-left-color: var(--high); }
+
+.result-card h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--wood);
+  margin-bottom: 0.4rem;
+}
+
+/* ── Badges ── */
+.badge {
+  display: inline-block;
+  padding: 0.2rem 0.7rem;
+  border-radius: 50px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.badge.low    { background: var(--safe); }
+.badge.medium { background: var(--gold); color: var(--wood); }
+.badge.high   { background: var(--high); }
+
+/* ── Organ tags ── */
+.organs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin: 0.6rem 0;
+}
+
+.organs span {
+  background: #eef5eb;
+  color: var(--herb-green);
+  padding: 0.25rem 0.55rem;
+  border-radius: 6px;
+  font-size: 0.78rem;
+  font-weight: 500;
+  border: 1px solid var(--herb-pale);
+}
+
+/* ── Alternatives ── */
+.alternatives {
+  margin-top: 2rem;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 14px;
+  padding: 1.2rem;
+  border-left: 4px solid var(--gold);
+  box-shadow: 0 4px 16px rgba(74, 55, 40, 0.06);
+}
+
+/* ── Footer ── */
+footer {
+  text-align: center;
+  padding: 1.4rem;
+  margin-top: 2rem;
+  background: var(--wood);
+  color: var(--beige);
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  position: relative;
+  z-index: 1;
+}
+
+footer span { color: var(--gold-light); }
+
+/* ── Responsive ── */
+@media (max-width: 900px) {
+  .leaf-right { display: none; }
+}
+@media (max-width: 700px) {
+  .inline-controls { flex-direction: column; }
+  .inline-controls button { width: 100%; }
+}
