@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Raíz — Wellness & Food Toxin Scanner</title>
+    <link rel="stylesheet" href="/static/styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;700&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet" />
+  </head>
+  <body>
+    <header class="hero">
+      <h1>Raíz</h1>
+      <p class="tagline">Know what's in your food. Return to your roots.</p>
+      <p class="subtitle">
+        Scan packaged foods, supplements, and beverages to identify harmful chemicals and discover safer whole-food and herbal alternatives.
+      </p>
+    </header>
+
+    <main>
+      <section class="search-grid">
+        <article class="search-card">
+          <h2>Barcode Search</h2>
+          <p>Enter a product barcode to fetch ingredients from Open Food Facts automatically.</p>
+          <div class="inline-controls">
+            <input id="barcodeInput" type="text" placeholder="e.g. 737628064502" />
+            <button id="barcodeBtn">Lookup</button>
+          </div>
+        </article>
+
+        <article class="search-card">
+          <h2>Ingredient List Analysis</h2>
+          <p>Paste a full ingredient list from a product label and run a toxin scan.</p>
+          <textarea id="ingredientsInput" rows="5" placeholder="water, high fructose corn syrup, red 40, sodium benzoate..."></textarea>
+          <button id="analyzeBtn">Analyze Ingredients</button>
+        </article>
+
+        <article class="search-card">
+          <h2>Single Ingredient Search</h2>
+          <p>Search a specific ingredient, chemical, or supplement additive directly.</p>
+          <div class="inline-controls">
+            <input id="singleInput" type="text" placeholder="e.g. carrageenan" />
+            <button id="singleBtn">Search</button>
+          </div>
+        </article>
+      </section>
+
+      <section id="status" class="status"></section>
+      <section id="results" class="results"></section>
+      <section id="alternatives" class="alternatives"></section>
+    </main>
+
+    <footer>
+      <p>Raíz — Go back to your roots</p>
+    </footer>
+
+    <script src="/static/app.js"></script>
+  </body>
+</html>
