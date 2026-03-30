@@ -10,7 +10,7 @@ from pydantic import BaseModel, Field
 
 from app.database import fetch_all_toxins, fetch_toxin_by_query, init_db
 
-app = FastAPI(title="Raíz API", version="1.0.0")
+app = FastAPI(title="Raíz API", version="1.0.0", docs_url="/docs", redoc_url="/redoc")
 
 app.add_middleware(
     CORSMiddleware,
