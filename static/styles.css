@@ -29,28 +29,51 @@ body {
   overflow-x: hidden;
 }
 
-/* ── Right side herb panel ── */
-.herb-panel {
+/* ── Leaf decorations ── */
+.leaf-right {
   position: fixed;
-  top: 0;
-  right: 0;
-  width: 160px;
-  height: 100vh;
+  top: -40px;
+  right: -80px;
+  width: 380px;
+  height: 520px;
+  background: url('/static/img/leaf-right.jpg') center/cover no-repeat;
   pointer-events: none;
-  z-index: 10;
-  overflow: hidden;
+  z-index: 0;
+  opacity: 0.55;
+  border-radius: 0 0 0 60%;
+  /* fade left edge into background */
+  -webkit-mask-image: linear-gradient(to left, rgba(0,0,0,0.85) 30%, transparent 100%);
+  mask-image: linear-gradient(to left, rgba(0,0,0,0.85) 30%, transparent 100%);
 }
 
-/* ── Bottom herb strip ── */
-.herb-strip {
+.leaf-bottom-left {
   position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 100px;
+  bottom: -30px;
+  left: -60px;
+  width: 340px;
+  height: 220px;
+  background: url('/static/img/leaf-bottom.jpg') center/cover no-repeat;
   pointer-events: none;
-  z-index: 10;
-  overflow: hidden;
+  z-index: 0;
+  opacity: 0.45;
+  border-radius: 0 40% 0 0;
+  -webkit-mask-image: linear-gradient(to top, rgba(0,0,0,0.8) 20%, transparent 100%);
+  mask-image: linear-gradient(to top, rgba(0,0,0,0.8) 20%, transparent 100%);
+}
+
+.leaf-bottom-right {
+  position: fixed;
+  bottom: -30px;
+  right: -40px;
+  width: 280px;
+  height: 180px;
+  background: url('/static/img/leaf-right.jpg') bottom center/cover no-repeat;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.35;
+  border-radius: 30% 0 0 0;
+  -webkit-mask-image: linear-gradient(to top, rgba(0,0,0,0.7) 10%, transparent 100%);
+  mask-image: linear-gradient(to top, rgba(0,0,0,0.7) 10%, transparent 100%);
 }
 
 /* ── Hero ── */
