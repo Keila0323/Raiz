@@ -18,18 +18,20 @@
 
     <header class="hero">
       <h1>Raíz</h1>
-      <span class="hero-accent">wellness &amp; food toxin scanner</span>
       <p class="tagline">Know what's in your food. Return to your roots.</p>
       <p class="subtitle">
         Scan packaged foods, supplements, and beverages to identify harmful chemicals and discover safer whole-food and herbal alternatives.
       </p>
+      <span class="hero-accent">wellness &amp; food toxin scanner</span>
     </header>
 
     <main>
       <section class="search-grid">
+
         <article class="search-card">
           <h2>Barcode Search</h2>
           <p>Enter a product barcode to fetch ingredients from Open Food Facts automatically.</p>
+          <div class="card-image" style="background-image: url('/static/img/card-herbs-1.jpg')"></div>
           <div class="inline-controls">
             <input id="barcodeInput" type="text" placeholder="e.g. 737628064502" />
             <button id="barcodeBtn">Lookup</button>
@@ -39,18 +41,21 @@
         <article class="search-card">
           <h2>Ingredient List Analysis</h2>
           <p>Paste a full ingredient list from a product label and run a toxin scan.</p>
-          <textarea id="ingredientsInput" rows="5" placeholder="water, high fructose corn syrup, red 40, sodium benzoate..."></textarea>
+          <div class="card-image" style="background-image: url('/static/img/card-herbs-2.jpg')"></div>
+          <textarea id="ingredientsInput" rows="4" placeholder="water, high fructose corn syrup, red 40, sodium benzoate..."></textarea>
           <button id="analyzeBtn">Analyze Ingredients</button>
         </article>
 
         <article class="search-card">
           <h2>Single Ingredient Search</h2>
           <p>Search a specific ingredient, chemical, or supplement additive directly.</p>
+          <div class="card-image" style="background-image: url('/static/img/hero-herbs.jpg')"></div>
           <div class="inline-controls">
             <input id="singleInput" type="text" placeholder="e.g. carrageenan" />
             <button id="singleBtn">Search</button>
           </div>
         </article>
+
       </section>
 
       <section id="status" class="status"></section>
