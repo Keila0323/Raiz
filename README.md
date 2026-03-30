@@ -4,8 +4,8 @@ Raíz is a full-stack web app that helps users identify potentially harmful ingr
 
 > **Project status:** MVP complete — actively improving documentation and features.
 
-🔗 **Live App:** [raiz.onrender.com](https://raiz.onrender.com)  
-📖 **API Docs:** [raiz.onrender.com/docs](https://raiz.onrender.com/docs)
+🔗 **Live App:** [raiz-ghvy.onrender.com](https://raiz-ghvy.onrender.com)  
+📖 **API Docs:** [raiz-ghvy.onrender.com/docs](https://raiz-ghvy.onrender.com/docs)
 
 ---
 
