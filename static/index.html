@@ -1,173 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Raíz — Ingredient & Toxin Scanner</title>
-  <meta name="description" content="Raíz uses AI to analyze food and supplement ingredient labels for harmful chemicals and suggest natural, whole-food alternatives." />
-  <link rel="stylesheet" href="/static/styles.v2.css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Raíz — Wellness &amp; Food Toxin Scanner</title>
+    <link rel="stylesheet" href="/static/styles.v2.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet" />
+  </head>
+  <body>
 
-  <!-- Nav -->
-  <nav class="nav">
-    <div class="nav-logo">
-      <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" width="28" height="28" aria-label="Raíz leaf icon">
-        <path d="M16 28 C16 28 6 20 6 12 C6 7.03 10.48 3 16 3 C21.52 3 26 7.03 26 12 C26 20 16 28 16 28Z" fill="#3A5C34" opacity="0.15"/>
-        <path d="M16 28 C16 28 6 20 6 12 C6 7.03 10.48 3 16 3 C21.52 3 26 7.03 26 12 C26 20 16 28 16 28Z" stroke="#3A5C34" stroke-width="1.5" fill="none"/>
-        <line x1="16" y1="28" x2="16" y2="14" stroke="#B8922A" stroke-width="1.2" stroke-linecap="round"/>
-        <path d="M16 22 C13 19 10 18 10 18" stroke="#3A5C34" stroke-width="1" stroke-linecap="round" opacity="0.6"/>
-        <path d="M16 19 C19 16 22 15 22 15" stroke="#3A5C34" stroke-width="1" stroke-linecap="round" opacity="0.6"/>
-      </svg>
-      <span class="logo-wordmark">Raíz</span>
-    </div>
-    <div class="nav-tag">Ingredient Scanner</div>
-  </nav>
+    <!-- Leaf decorations -->
+    <div class="leaf-right"></div>
+    <div class="leaf-bottom-left"></div>
+    <div class="leaf-bottom-right"></div>
 
-  <!-- Hero — split layout -->
-  <header class="hero">
-
-    <!-- Left panel: headline -->
-    <div class="hero-left">
-      <div class="hero-badge">
-        <span class="badge-dot"></span>
-        Powered by GPT-4o
-      </div>
-
-      <h1 class="hero-title">
-        Know what's in
-        <span class="hero-title-accent">your food.</span>
-      </h1>
-
-      <p class="hero-sub">
-        Raíz analyzes ingredient labels from packaged foods, supplements, and
-        beverages to identify harmful chemicals — and suggests safer, whole-food
-        and herbal alternatives rooted in nature.
+    <header class="hero">
+      <h1>Raíz</h1>
+      <p class="tagline">Know what's in your food. Return to your roots.</p>
+      <p class="subtitle">
+        Scan packaged foods, supplements, and beverages to identify harmful chemicals and discover safer whole-food and herbal alternatives.
       </p>
+      <span class="hero-accent">wellness &amp; food toxin scanner</span>
+    </header>
 
-      <div class="hero-stats">
-        <div class="stat">
-          <span class="stat-num">3</span>
-          <span class="stat-label">Ways to scan</span>
-        </div>
-        <div class="stat">
-          <span class="stat-num">AI</span>
-          <span class="stat-label">Toxin analysis</span>
-        </div>
-        <div class="stat">
-          <span class="stat-num">100%</span>
-          <span class="stat-label">Label-based</span>
-        </div>
-      </div>
-    </div>
+    <main>
+      <section class="search-grid">
 
-    <!-- Right panel: tabbed scanner -->
-    <div class="hero-right">
-      <div class="scanner-card">
-
-        <!-- Top bar -->
-        <div style="display:flex;align-items:center;gap:10px;margin-bottom:20px;">
-          <svg viewBox="0 0 24 24" fill="none" stroke="#3A5C34" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="20" height="20">
-            <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
-          </svg>
-          <span style="font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-weight:700;color:var(--wood);">Scan an Ingredient Label</span>
-        </div>
-
-        <!-- Tabs -->
-        <div class="scanner-tabs">
-          <button class="tab-btn active" onclick="switchTab('barcode', this)">Barcode</button>
-          <button class="tab-btn" onclick="switchTab('ingredients', this)">Ingredient List</button>
-          <button class="tab-btn" onclick="switchTab('single', this)">Single Item</button>
-        </div>
-
-        <!-- Barcode panel -->
-        <div id="tab-barcode" class="tab-panel active">
-          <p class="panel-label">Enter a product barcode to automatically fetch its ingredient list.</p>
+        <article class="search-card">
+          <h2>Barcode Search</h2>
+          <p>Enter a product barcode to fetch ingredients from Open Food Facts automatically.</p>
           <input id="barcodeInput" type="text" placeholder="e.g. 737628064502" />
-          <button id="barcodeBtn" class="action-btn">Look Up Barcode</button>
-        </div>
+          <button id="barcodeBtn" class="full-btn">Lookup</button>
+        </article>
 
-        <!-- Ingredient list panel -->
-        <div id="tab-ingredients" class="tab-panel">
-          <p class="panel-label">Paste a full ingredient list from any product label.</p>
-          <textarea id="ingredientsInput" rows="5" placeholder="e.g. water, high fructose corn syrup, Red 40, sodium benzoate, carrageenan..."></textarea>
-          <button id="analyzeBtn" class="action-btn">Analyze Ingredients</button>
-        </div>
+        <article class="search-card">
+          <h2>Ingredient List Analysis</h2>
+          <p>Paste a full ingredient list from a product label and run a toxin scan.</p>
+          <textarea id="ingredientsInput" rows="4" placeholder="water, high fructose corn syrup, red 40, sodium benzoate..."></textarea>
+          <button id="analyzeBtn" class="full-btn">Analyze Ingredients</button>
+        </article>
 
-        <!-- Single ingredient panel -->
-        <div id="tab-single" class="tab-panel">
-          <p class="panel-label">Search a specific ingredient, additive, or chemical by name.</p>
+        <article class="search-card">
+          <h2>Single Ingredient Search</h2>
+          <p>Search a specific ingredient, chemical, or supplement additive directly.</p>
           <input id="singleInput" type="text" placeholder="e.g. carrageenan" />
-          <button id="singleBtn" class="action-btn">Search Ingredient</button>
-        </div>
+          <button id="singleBtn" class="full-btn">Search</button>
+        </article>
 
-      </div>
-    </div>
-  </header>
+      </section>
 
-  <!-- Status + Results -->
-  <div class="results-section">
-    <section id="status" class="status"></section>
-
-    <div id="results-wrapper" style="display:none;">
-      <div class="results-header">
-        <h2>Scan Results</h2>
-        <div class="results-divider"></div>
-      </div>
+      <section id="status" class="status"></section>
       <section id="results" class="results"></section>
-      <section id="alternatives" class="alternatives" style="display:none;"></section>
-    </div>
-  </div>
+      <section id="alternatives" class="alternatives"></section>
+    </main>
 
-  <!-- How it Works -->
-  <section class="how-section">
-    <div class="how-inner">
-      <p class="how-label">The Process</p>
-      <h2 class="how-title">Three scans.<br/>Total transparency.</h2>
-      <div class="how-grid">
-        <div class="how-card">
-          <div class="how-num">01</div>
-          <h3>Choose Your Method</h3>
-          <p>Scan by barcode using Open Food Facts, paste a full ingredient list from any label, or search a single additive by name.</p>
-        </div>
-        <div class="how-card">
-          <div class="how-num">02</div>
-          <h3>AI Toxin Analysis</h3>
-          <p>Raíz's GPT-4o engine cross-references each ingredient against known harmful chemicals, flagging risk levels and affected organs.</p>
-        </div>
-        <div class="how-card">
-          <div class="how-num">03</div>
-          <h3>Natural Alternatives</h3>
-          <p>Get a curated list of safer whole-food and herbal substitutes for flagged ingredients, rooted in traditional wellness.</p>
-        </div>
-      </div>
-    </div>
-  </section>
+    <footer>
+      <p>Raíz &mdash; <span>Go back to your roots</span></p>
+    </footer>
 
-  <!-- Footer -->
-  <footer>
-    <span class="footer-brand">Raíz</span>
-    <p class="footer-sub">Ingredient transparency rooted in nature.</p>
-    <p class="footer-copy">© 2026 Raíz. Built with FastAPI + GPT-4o.</p>
-  </footer>
-
-  <script>
-    // Tab switching
-    function switchTab(name, btn) {
-      document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
-      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
-      document.getElementById('tab-' + name).classList.add('active');
-      btn.classList.add('active');
-    }
-
-    // Show results wrapper whenever a scan runs
-    function showResultsWrapper() {
-      document.getElementById('results-wrapper').style.display = 'block';
-    }
-  </script>
-  <script src="/static/app.js"></script>
-</body>
+    <script src="/static/app.js"></script>
+  </body>
 </html>

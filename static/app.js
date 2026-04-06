@@ -20,15 +20,12 @@ const organIcons = {
 
 function setStatus(message, isError = false) {
   statusEl.textContent = message;
-  statusEl.style.color = isError ? 'var(--high)' : 'var(--green-mid)';
+  statusEl.style.color = isError ? '#d9534f' : '#4d3d60';
 }
 
 function renderResults(items, title = 'Flagged Toxins') {
   resultsEl.innerHTML = '';
   alternativesEl.innerHTML = '';
-  alternativesEl.style.display = 'none';
-  const wrapper = document.getElementById('results-wrapper');
-  if (wrapper) wrapper.style.display = 'block';
 
   if (!items.length) {
     setStatus('No known toxins found in the current Raíz database.');
@@ -55,11 +52,10 @@ function renderResults(items, title = 'Flagged Toxins') {
   });
 
   const allAlternatives = [...new Set(items.flatMap((item) => item.natural_alternatives))];
-  alternativesEl.style.display = 'block';
   alternativesEl.innerHTML = `
-    <h3>Natural Alternatives</h3>
-    <p style="font-size:0.88rem;color:var(--text-mid);margin-bottom:12px;">Whole-food and herbal replacements you can use instead:</p>
-    <ul style="padding-left:1.2rem;">${allAlternatives.map((alt) => `<li style="font-size:0.88rem;color:var(--text-mid);margin-bottom:4px;">${alt}</li>`).join('')}</ul>
+    <h2>Natural Alternatives</h2>
+    <p>Whole-food and herbal replacements you can use instead:</p>
+    <ul>${allAlternatives.map((alt) => `<li>${alt}</li>`).join('')}</ul>
   `;
 }
 
